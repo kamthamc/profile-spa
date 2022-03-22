@@ -1,0 +1,19 @@
+<li id="experience-<%= experience.company %>" class="experience">
+  <h5><%= experience.company %></h5>
+  <div class="work-timeline">
+    <time datetime="<%= new Date(experience.begin).toLocaleDateString() %>"
+      ><%= new Date(experience.begin).toLocaleDateString() %></time
+    >
+    <span>to</span>
+    <% if (experience.end) { %>
+    <time datetime="<%= new Date(experience.end).toLocaleDateString() %>"
+      ><%= new Date(experience.end).toLocaleDateString() %></time
+    >
+    <% } else { %> Present <% } %>
+  </div>
+  <ul class="experience-notes-list">
+    <% experience.noteList.forEach(function(note){ %>
+    <li><%= note %></li>
+    <% }); %>
+  </ul>
+</li>

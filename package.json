@@ -1,0 +1,21 @@
+{
+  "name": "@kamthamc/resume-spa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kamthamc/profile-spa.git",
+  "author": "Chaitanya K Kamatham <74nyjqk@kchaitanya.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "yarn run dev:html && yarn run dev:css",
+    "dev:html": "ejs ./src/index.ejs -f ./src/profile.json -o ./build/index.html",
+    "build:html": "ejs -w ./src/index.ejs -f ./src/profile.json -o ./build/index.html",
+    "build:css": "sass src/styles:build/styles",
+    "dev:css": "sass --watch src/styles:build/styles"
+  },
+  "devDependencies": {
+    "ejs": "^3.1.6",
+    "sass": "^1.49.9"
+  },
+  "packageManager": "yarn@3.2.0"
+}
