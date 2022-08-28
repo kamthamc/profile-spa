@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "dev": "yarn run dev:html && yarn run dev:css",
+    "build": "yarn run build:html && yarn run build:css",
     "dev:html": "ejs ./src/index.ejs -f ./src/profile.json -o ./build/index.html",
     "build:html": "ejs -w ./src/index.ejs -f ./src/profile.json -o ./build/index.html",
     "build:css": "sass src/styles:build/styles",
