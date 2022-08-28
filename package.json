@@ -8,8 +8,9 @@
   "private": true,
   "scripts": {
     "dev": "yarn run dev:html && yarn run dev:css",
-    "build": "yarn run build:html && yarn run build:css",
+    "build": "yarn run build:init && yarn run build:html && yarn run build:css",
     "dev:html": "ejs ./src/index.ejs -f ./src/profile.json -o ./build/index.html",
+    "build:init": "mkdir -p ./build",
     "build:html": "ejs -w ./src/index.ejs -f ./src/profile.json -o ./build/index.html",
     "build:css": "sass src/styles:build/styles",
     "dev:css": "sass --watch src/styles:build/styles"
